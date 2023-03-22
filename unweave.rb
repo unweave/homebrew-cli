@@ -5,20 +5,20 @@
 class Unweave < Formula
   desc "Supabase for Machine Learning"
   homepage "https://unweave.io"
-  version "0.1.5"
+  version "0.1.6"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/unweave/cli/releases/download/v0.1.5/unweave_0.1.5_Darwin_arm64.tar.gz"
-      sha256 "de84b639c8446670337dd0e413990f04ad77789b5ccc144e2b05f63812b00821"
+    if Hardware::CPU.intel?
+      url "https://github.com/unweave/cli/releases/download/v0.1.6/unweave_0.1.6_Darwin_x86_64.tar.gz"
+      sha256 "d593a31fc2c68016dc3506f5f47b74b5eaaf0f8c849bc2e5c9fed0732483c0cd"
 
       def install
         bin.install "unweave"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/unweave/cli/releases/download/v0.1.5/unweave_0.1.5_Darwin_x86_64.tar.gz"
-      sha256 "fe04f0a16aeb1b470f9c1377d5ee15ea2931a4af822cc38036633129c2f74af9"
+    if Hardware::CPU.arm?
+      url "https://github.com/unweave/cli/releases/download/v0.1.6/unweave_0.1.6_Darwin_arm64.tar.gz"
+      sha256 "78264ae2b811ad4c6366a9af9812a307658f1dd3e283bcbe5ab34da58a6e4ece"
 
       def install
         bin.install "unweave"
@@ -27,17 +27,17 @@ class Unweave < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unweave/cli/releases/download/v0.1.5/unweave_0.1.5_Linux_arm64.tar.gz"
-      sha256 "0e0e406470bbe64784109309b9f6d13bc710178538122594391ba0185e371bda"
+    if Hardware::CPU.intel?
+      url "https://github.com/unweave/cli/releases/download/v0.1.6/unweave_0.1.6_Linux_x86_64.tar.gz"
+      sha256 "f8f847d5210d15bc7b642aaaa55769cf9ad19a035a908e8ef4b2b2a82dda0c78"
 
       def install
         bin.install "unweave"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/unweave/cli/releases/download/v0.1.5/unweave_0.1.5_Linux_x86_64.tar.gz"
-      sha256 "d9d7a4742510478f4afe023697ca65ba938ec408328790720d04a9cc65bfe37c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/unweave/cli/releases/download/v0.1.6/unweave_0.1.6_Linux_arm64.tar.gz"
+      sha256 "c2176e4ff9d2769ffd43c443feb8c7fec408e9ceec42afdd1ca5699b3b998790"
 
       def install
         bin.install "unweave"
