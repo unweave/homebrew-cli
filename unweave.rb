@@ -10,7 +10,7 @@ class Unweave < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/unweave/cli/releases/download/v0.1.8/unweave_0.1.8_Darwin_x86_64.tar.gz"
-      sha256 "b8a2449fd7fd8b0aa994bc79b324c9b7f0c63cad3dbc20797b0dd74feee54f1f"
+      sha256 "9e607c24ae3145c7f09337e5b9d49f7b88fd970c0c536acd750051e680339880"
 
       def install
         bin.install "unweave"
@@ -18,7 +18,7 @@ class Unweave < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/unweave/cli/releases/download/v0.1.8/unweave_0.1.8_Darwin_arm64.tar.gz"
-      sha256 "3e9e76c7e24499fc43ea6df08e852e7e1c089435b33de132543bd317308d7205"
+      sha256 "6b6cc222a720071009c0bd0d6c2f3e9bdd0d7ebed3c1d88a46435c8df8e9398f"
 
       def install
         bin.install "unweave"
@@ -27,17 +27,17 @@ class Unweave < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/unweave/cli/releases/download/v0.1.8/unweave_0.1.8_Linux_x86_64.tar.gz"
-      sha256 "b4c86a9060a66c88d23b9c883e265cd1e115accac5aed2fbecc5f17332769171"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/unweave/cli/releases/download/v0.1.8/unweave_0.1.8_Linux_arm64.tar.gz"
+      sha256 "35bdb7b69217372d15f58430c67c6474906fe2a327512c9c37551942430a9105"
 
       def install
         bin.install "unweave"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unweave/cli/releases/download/v0.1.8/unweave_0.1.8_Linux_arm64.tar.gz"
-      sha256 "5940f9e462aafa58012354e42e409ec3dacd96e00788e8e0e87487dd8f64b92a"
+    if Hardware::CPU.intel?
+      url "https://github.com/unweave/cli/releases/download/v0.1.8/unweave_0.1.8_Linux_x86_64.tar.gz"
+      sha256 "927b4888e0a58259b45b05d32e7efeaad4ea93a508035a48f386c037341e597a"
 
       def install
         bin.install "unweave"
