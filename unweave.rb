@@ -5,20 +5,20 @@
 class Unweave < Formula
   desc "Supabase for Machine Learning"
   homepage "https://unweave.io"
-  version "0.1.31"
+  version "0.1.32"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/unweave/cli/releases/download/v0.1.31/unweave_0.1.31_Darwin_x86_64.tar.gz"
-      sha256 "8f753ed5052b7900983808029c8926b80857b529016d7cbf40159f68c127ec07"
+      url "https://github.com/unweave/cli/releases/download/v0.1.32/unweave_0.1.32_Darwin_x86_64.tar.gz"
+      sha256 "bcbd4f05a55c299ee172c96bfd04e334b6ad77b2328f10a72f5526d7fc8e3a7b"
 
       def install
         bin.install "unweave"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/unweave/cli/releases/download/v0.1.31/unweave_0.1.31_Darwin_arm64.tar.gz"
-      sha256 "d099a96dd4ff1ed607549a762863d25f1fca1304d8c8034a0b7b15902af55c0e"
+      url "https://github.com/unweave/cli/releases/download/v0.1.32/unweave_0.1.32_Darwin_arm64.tar.gz"
+      sha256 "35682bdcc61118c1f47981c6ed3b1db0af50759fdd85660eb4991bcc554509e2"
 
       def install
         bin.install "unweave"
@@ -28,16 +28,16 @@ class Unweave < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unweave/cli/releases/download/v0.1.31/unweave_0.1.31_Linux_arm64.tar.gz"
-      sha256 "c21e1d2db3e79000d1b4ee28c61b6385d8546b8ca7c33f2ac4e166f97d1ca46f"
+      url "https://github.com/unweave/cli/releases/download/v0.1.32/unweave_0.1.32_Linux_arm64.tar.gz"
+      sha256 "d2d4a471dfb1549d865dc5e5b395f82b057305068d724a9eb89b0f15e3ad70b0"
 
       def install
         bin.install "unweave"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/unweave/cli/releases/download/v0.1.31/unweave_0.1.31_Linux_x86_64.tar.gz"
-      sha256 "e81ce1371f03fff0e6bff1838ec0ff49498c628bfd58c9efd2cf5e96aacffd21"
+      url "https://github.com/unweave/cli/releases/download/v0.1.32/unweave_0.1.32_Linux_x86_64.tar.gz"
+      sha256 "daacee3c3d23d7748724729dfe1f8f146f43e77bee1afe27e026b0396c620c26"
 
       def install
         bin.install "unweave"
