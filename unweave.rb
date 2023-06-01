@@ -5,20 +5,20 @@
 class Unweave < Formula
   desc "Supabase for Machine Learning"
   homepage "https://unweave.io"
-  version "0.1.33"
+  version "0.1.34"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/unweave/cli/releases/download/v0.1.33/unweave_0.1.33_Darwin_x86_64.tar.gz"
-      sha256 "4c28f91a25b39ea0aadc78ff0e86c027bdf05fb91ca96e52d6482983c8174dc2"
+      url "https://github.com/unweave/cli/releases/download/v0.1.34/unweave_0.1.34_Darwin_x86_64.tar.gz"
+      sha256 "e1542f0ce9a350eb549f127c86f126612831ac9b1d87dbabe83f17aaa2f2b681"
 
       def install
         bin.install "unweave"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/unweave/cli/releases/download/v0.1.33/unweave_0.1.33_Darwin_arm64.tar.gz"
-      sha256 "977aa0bac8a9be6a44302aa09b3764ee1f38263d068361ebb96bfa6386624e6d"
+      url "https://github.com/unweave/cli/releases/download/v0.1.34/unweave_0.1.34_Darwin_arm64.tar.gz"
+      sha256 "c0ed06c34840a2fb0ac96d5f056d78e8f78a61ba83e3b793cc8ff3fd1a4c4cb7"
 
       def install
         bin.install "unweave"
@@ -27,17 +27,17 @@ class Unweave < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/unweave/cli/releases/download/v0.1.33/unweave_0.1.33_Linux_x86_64.tar.gz"
-      sha256 "87782b6171c0420d7a7d59c122be6e83aefda926c65492d99cd33c60d39e0aa3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/unweave/cli/releases/download/v0.1.34/unweave_0.1.34_Linux_arm64.tar.gz"
+      sha256 "ccd5782cb475f174f68abba373947b4d4d22f8323d34f5eaddce24b38c5efa3e"
 
       def install
         bin.install "unweave"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unweave/cli/releases/download/v0.1.33/unweave_0.1.33_Linux_arm64.tar.gz"
-      sha256 "9a309068eef1c569c48381f246fbe374c27a9c9cee8ee93ab1bad5ef825089b7"
+    if Hardware::CPU.intel?
+      url "https://github.com/unweave/cli/releases/download/v0.1.34/unweave_0.1.34_Linux_x86_64.tar.gz"
+      sha256 "80eead36b65224cf3c06024c30563276e69e690e0039822dea436161ea167f69"
 
       def install
         bin.install "unweave"
